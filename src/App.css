@@ -1,0 +1,203 @@
+/* 
+.app-container {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid black; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px; 
+  margin-bottom: 10px; 
+}
+.events-section {
+  width: 50%;
+  border: 1px solid black; 
+  margin-right: 20px;
+}
+.selected-events-section {
+  width: 50%;
+  border: 1px solid black; 
+  
+}
+
+.event-list,
+.selected-events-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; 
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  background-color: #dfe8f8;
+
+}
+
+.event-category {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.event-separator {
+  border: 0.5px solid black;
+}
+
+.event-details {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.event-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  color: #000;
+  background-color: #dbe7d7;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  border-radius: 5px;
+}
+
+button:disabled {
+  background-color: white;
+  cursor: not-allowed;
+  color: black;
+}
+
+.event-card.disabled {
+  background-color: #c4c4c4;
+  
+} */
+
+.app-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid black; 
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row; /* Use row layout on larger screens */
+  }
+}
+
+h2 {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px; 
+  margin-bottom: 10px; 
+}
+
+.events-section {
+  width: 50%;
+  border: 1px solid black; 
+  margin-right: 20px;
+}
+.selected-events-section {
+  width: 50%;
+  border: 1px solid black; 
+}
+
+@media (min-width: 768px) {
+  .events-section,
+  .selected-events-section {
+    width: 50%; /* Half width on larger screens */
+  }
+}
+
+.event-list,
+.selected-events-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Flexible columns */
+  gap: 20px; 
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 70%; /* Full width within the grid */
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  background-color: #dfe8f8;
+}
+
+.event-category {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-separator {
+  border: 0.5px solid black;
+}
+
+.event-details {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.event-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  color: #000;
+  background-color: #dbe7d7;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  border-radius: 5px;
+}
+
+button:disabled {
+  background-color: white;
+  cursor: not-allowed;
+  color: black;
+}
+
+.event-card.disabled {
+  background-color: #c4c4c4;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .event-list,
+  .selected-events-list {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .event-card {
+    margin: 0; /* Remove margin for full-width cards */
+  }
+}
