@@ -1,10 +1,10 @@
 import React from "react";
 import EventCard from "./EventCard";
 
-const EventList = ({ events, onSelect, disabledEvents }) => {
+const EventList = ({ events = [], onSelect, disabledEvents = [] }) => {
   const isDisabled = (event) => {
     return disabledEvents.some(
-      (disabledEvent) => disabledEvent.id === event.id
+      (disabledEvent) => disabledEvent?.id === event?.id
     );
   };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import EventCard from "./EventCard";
 
-const SelectedEventsList = ({ selectedEvents, onDeselect }) => {
+const SelectedEventsList = ({ selectedEvents = [], onDeselect }) => {
   return (
     <div className="selected-events-list">
       {selectedEvents.map((event) => (

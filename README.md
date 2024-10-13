@@ -1,71 +1,47 @@
-# Getting Started with Create React App
+# Sports Events Manager⚡
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+- This application shows all sports events open for registration.
+- User can see the list of all the events, where each event has name, event category & time.
+- User can select an event by clicking on select button
+- All selected events will appear on the right hand side of the screen
+- User can deselect an event from the selected event list.
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+View the live demo of the application here 👉 [Sports Events Manager](https://sports-day-event.netlify.app/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Presentation Deck
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+View the presentation behind the implementation of this project.
+[Presentation](https://docs.google.com/presentation/d/1qXY9sYZNZ8Ve6YS5SiFLsyfKJ9-fcp3keDQIoQoV8Fg/edit?usp=sharing)
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React JS
+- React Toastify
+- React Testing Library
 
-### `npm run build`
+## Page Load Time
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Performance Report is calculated using [Page Speed Insights](https://pagespeed.web.dev/)
+- [Desktop Performance Report](https://pagespeed.web.dev/analysis/https-sports-day-event-netlify-app/zthw6c4gyz?form_factor=desktop)
+- [Mobile Performance Report](https://pagespeed.web.dev/analysis/https-sports-day-event-netlify-app/zthw6c4gyz?form_factor=mobile)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Performance Improvements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Used `useMemo` hook to avoid re-renders & cache state value.
+- Made the website responsive to maintain consitent performance for mobile & tablet users.
 
-### `npm run eject`
+## Run Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Clone the repository
+- Run npm install to install required dependencies
+- Finally, run npm start to run the application and open the browser to view the site on localhost.
+- Use Node JS version `18.20.4` to run the application on local
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 👤 **Neeraj Chaudhary**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# events-management
+- Linkedin: [Neeraj Chaudhary](https://www.linkedin.com/in/neeraj-chaudhary007/)
+- Github: [@naspnrd](https://github.com/naspnrd)
