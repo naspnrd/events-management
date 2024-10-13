@@ -1,5 +1,5 @@
 import React from "react";
-import { formatTime } from "../utils/helpers";
+import EventCard from "./EventCard";
 
 const EventList = ({ events, onSelect, disabledEvents }) => {
   const isDisabled = (event) => {
@@ -11,28 +11,13 @@ const EventList = ({ events, onSelect, disabledEvents }) => {
   return (
     <div className="event-list">
       {events.map((event) => (
-        <div
+        <EventCard
           key={event.id}
-          className={`event-card ${isDisabled(event) ? "disabled" : ""}`}
-        >
-          <div className="event-category">
-            {event.event_category.charAt(0).toUpperCase()}
-          </div>
-          <hr className="event-separator" />
-          <div className="event-details">
-            <div className="event-name">{event.event_name}</div>
-            <div className="event-category-name">({event.event_category})</div>
-            <div className="event-timing">
-              {formatTime(event.start_time)} - {formatTime(event.end_time)}
-            </div>
-            <button
-              onClick={() => onSelect(event)}
-              disabled={isDisabled(event)}
-            >
-              SELECT
-            </button>
-          </div>
-        </div>
+          event={event}
+          onSelect={onSelect}
+          isSelectable={!isDisabled(event)}
+          disabled={isDisabled(event)}
+        />
       ))}
     </div>
   );

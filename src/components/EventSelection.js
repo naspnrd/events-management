@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { events as mockData } from "../data/mockData";
 import EventList from "./EventList";
 import SelectedEventsList from "./SelectedEventsList";
@@ -6,8 +7,18 @@ import "../App.css";
 import { MAX_SELECTED_EVENTS } from "../utils/constants";
 
 const EventSelection = () => {
-  const [remainingEvents, setRemainingEvents] = useState(mockData);
+  const sortEvents = (events) => {
+    return events.sort((a, b) => {
+      const timeDifference = new Date(a.start_time) - new Date(b.start_time);
+      if (timeDifference === 0) {
+        return a.id - b.id;
+      }
+      return timeDifference;
+    });
+  };
 
+  const sortedMockData = sortEvents([...mockData]);
+  const [remainingEvents, setRemainingEvents] = useState(sortedMockData);
   const [selectedEvents, setSelectedEvents] = useState([]);
 
   const isConflict = (event1, event2) => {
@@ -26,22 +37,23 @@ const EventSelection = () => {
   };
 
   const handleSelect = (event) => {
-    if (selectedEvents.length < MAX_SELECTED_EVENTS) {
-      setSelectedEvents((prevSelected) => [...prevSelected, event]);
-
-      setRemainingEvents((prevEvents) =>
-        prevEvents.filter((e) => e.id !== event.id)
-      );
+    if (selectedEvents.length >= MAX_SELECTED_EVENTS) {
+      return toast.error("Only 3 events can be selected");
     }
+
+    setSelectedEvents((prevSelected) => sortEvents([...prevSelected, event]));
+
+    setRemainingEvents((prevEvents) =>
+      sortEvents(prevEvents.filter((e) => e.id !== event.id))
+    );
   };
 
-  // Handle deselecting an event
   const handleDeselect = (event) => {
     setSelectedEvents((prevSelected) =>
-      prevSelected.filter((e) => e.id !== event.id)
+      sortEvents(prevSelected.filter((e) => e.id !== event.id))
     );
 
-    setRemainingEvents((prevEvents) => [...prevEvents, event]);
+    setRemainingEvents((prevEvents) => sortEvents([...prevEvents, event]));
   };
 
   const disabledEvents = getDisabledEvents();
@@ -49,7 +61,7 @@ const EventSelection = () => {
   return (
     <div className="app-container">
       <div className="events-section">
-        <h2>All Events</h2>
+        <p>All Events</p>
         <EventList
           events={remainingEvents}
           onSelect={handleSelect}
@@ -57,7 +69,7 @@ const EventSelection = () => {
         />
       </div>
       <div className="selected-events-section">
-        <h2>Selected Events</h2>
+        <p>Selected Events</p>
         <SelectedEventsList
           selectedEvents={selectedEvents}
           onDeselect={handleDeselect}

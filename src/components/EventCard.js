@@ -1,7 +1,7 @@
 import React from "react";
 import { formatTime } from "../utils/helpers";
 
-const EventCard = ({ event, onSelect, onDeselect, isSelectable }) => {
+const EventCard = ({ event, onSelect, onDeselect, isSelectable, bgColor }) => {
   const handleClick = () => {
     if (onSelect) {
       onSelect(event);
@@ -25,7 +25,7 @@ const EventCard = ({ event, onSelect, onDeselect, isSelectable }) => {
         <button
           onClick={handleClick}
           disabled={!isSelectable}
-          style={{ backgroundColor: onDeselect ? "#ead3cb" : "#cfe2ff" }}
+          style={{ backgroundColor: bgColor }}
         >
           {onDeselect ? "REMOVE" : "SELECT"}
         </button>
